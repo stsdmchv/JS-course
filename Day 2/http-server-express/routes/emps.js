@@ -3,12 +3,12 @@ const router = express.Router();
 
 const pool=require('../modules/db')
 
-/* GET info page. */
+/* GET all employee. */
 router.get('/', function(request, response, next) {
   response.setHeader('Content-Type','application/json; charset=utf-8');
   pool.connect()
       .then(client=>{
-        client.query('select now()', [])
+        client.query('select * from scott.emp', [])
         .then(data=>{
           response.send(data.rows);
         })

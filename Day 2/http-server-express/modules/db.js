@@ -9,6 +9,6 @@ const pool = new Pool({
     connectionTimeoutMillis: 2000
 });
 
-pool.on('connect',client=>console.log(client, ` online`));
-pool.on('remove',client=>console.log(client, ` offline`));
+pool.on('connect',client=>console.log(`client  online`));
+pool.on('remove',client=>console.log(`client, offline`));
 module.exports = pool;
