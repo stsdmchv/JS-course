@@ -290,3 +290,7 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+.active{
+  background: #000;
+}

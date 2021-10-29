@@ -1,11 +1,11 @@
 <div>
-  {{title}}
+  {{title}} {{time}} <button (click)="get()">Get Time!</button>
   <div>
     <nav>
-      <a routerLink="" >Главная</a>
-      <a routerLink="/depts" >Отделы</a>
-      <a routerLink="/emps" >Сотрудники</a>
-      <a routerLink="/phones" >Телефоны</a>
+      <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная</a>
+      <a routerLink="/depts" routerLinkActive="active">Отделы</a>
+      <a routerLink="/emps" routerLinkActive="active">Сотрудники</a>
+      <a routerLink="/phones" routerLinkActive="active">Телефоны</a>
     </nav>
   </div>
   <router-outlet>Working...</router-outlet>
