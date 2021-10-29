@@ -10,13 +10,10 @@ router.get('/', function(request, response, next) {
       .then(client=>{
         client.query('select now()', [])
         .then(data=>{
+          client.release();
           response.send(data.rows);
         })
-            .catch(err=>response.send({error:"Ошибка SQL" + err.toString()}))
-            .finally(temp=>{client.release();response.end('');}) // в chunk ничего не передаем
-      })
-        .catch(err=>response.send('{"error":"Error on connection"}'))
-      .finally(t=>console.log('End of work'));
+      });
 });
 
 module.exports = router;

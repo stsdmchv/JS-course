@@ -1,0 +1,12 @@
+<title>STSDMCHV'S Projects</title>
+<br/>
+
+<div><h1>{{title}}</h1></div> <!-- односторонняя привязка -->
+<br/>
+
+<input name="fn" [(ngModel)]="fn" (change)="changeFullName()">
+<input name="ln" [(ngModel)]="ln" (keypress)="changeFullName()">
+<br/>
+
+<div>{{fullName}}</div>
+<br/>
